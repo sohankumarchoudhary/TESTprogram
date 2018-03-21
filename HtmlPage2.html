@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            background-color: cornflowerblue;
+        }
+
+        #div {
+            background-color: azure;
+            margin: 200px,200px;
+            margin-right: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>login page</h1>
+    <div id="div">
+        <form name="form1" onsubmit="return validate()" action="HtmlPage1.html">
+
+
+            <table>
+
+
+
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" /></td>
+                </tr>
+
+                <tr>
+                    <td>email</td>
+                    <td><input type="email" name="email" /></td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="password" name="password" /></td>
+                </tr>
+                
+                <tr>
+                    <td><input type="submit" value="login" /></td>
+
+
+                </tr>
+
+            </table>
+
+
+
+
+
+        </form>
+    </div>
+
+
+    <script>
+        function validate() {
+            var name = document.form1.name;
+            var email = document.form1.email;
+            var phone = document.form1.number;
+            var passwd = document.form1.password;
+            var add = document.form1.ta;
+            var googlecapcha = document.form1.gc;
+
+            if (name.value == "") {
+                window.alert("Please enter your name.");
+                name.focus();
+                return false;
+            }
+
+
+
+
+
+            var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            // elment.style.color = "white";
+
+            if (!pattern.test(email.value)) {
+                window.alert("Please enter a valid e-mail address.");
+                email.focus();
+                return false;
+            }
+
+            if (phone.value == "") {
+                window.alert("Please enter mobile no.");
+                phone.focus();
+                return false;
+            }
+
+            if (passwd.value == "") {
+                window.alert("Please enter a valid password.");
+                passwd.focus();
+                return false;
+            }
+
+
+
+
+
+
+
+            re = /[A-Z]/;
+            if (!re.test(passwd.value) && passwd.value.length < 2) {
+                alert("Error: password must contain at least 2 capital letter!");
+                passwd.focus();
+                return false;
+            }
+
+            if ((passwd.value != "@" || "#" || "$") && passwd.value.length < 3) {
+                alert("Error: password must contain atleast 3 capital letter");
+                passwd.focus();
+                return false;
+            }
+            if (passwd.value.length < 8) {
+                alert("Error: Password must contain at least six characters!");
+                passwd.focus();
+                return false;
+
+            }
+        }
+
+
+
+
+
+        
+        
+    </script>
+
+
+
+
+
+
+</body>
+</html>
